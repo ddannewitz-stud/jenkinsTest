@@ -1,0 +1,46 @@
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+apply plugin: "jacoco"
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testCompile "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2"
+    testCompile 'junit:junit:4.11'
+}
+// default tasks
+defaultTasks 'compile', 'test', 'jacocoTestReport', 'jar', 'showUnitTestReport', 'showCoverageReport'
+// print string before cleaning
+clean.doFirst {
+    println("--- CLEANING ---")
+}
+// compile
+task compile(dependsOn:clean) {
+    'compileJava'
+}
+// create jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'main.java.Main'
+    }
+}
+// open test report
+task showUnitTestReport(type:Exec) {
+    // set working dir (location of test result - index.html)
+    workingDir './build/reports/tests'
+    // opens cmd which terminates after starting up index.html
+    commandLine 'cmd', '/c', 'start index.html'
+}
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "./build/jacocoHtml"
+    }
+}
+task showCoverageReport(type:Exec) {
+    // set working dir (location of test result - index.html)
+    workingDir './build/jacocoHtml'
+    // opens cmd which terminates after starting up index.html
+    commandLine 'cmd', '/c', 'start index.html'
+}
