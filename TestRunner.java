@@ -9,7 +9,7 @@ public class TestRunner {
       for (Failure failure : result.getFailures()) {
          System.out.println(failure.toString());
       }
-
+      // kommentar
       System.out.println(result.wasSuccessful());
    }
-} 
+}
