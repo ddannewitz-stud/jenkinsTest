@@ -9,7 +9,7 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 // default tasks
-defaultTasks 'compile', 'test', 'jacocoTestReport', 'jar'
+defaultTasks 'compile', 'test', 'jar'
 // print string before cleaning
 clean.doFirst {
     println("--- CLEANING ---")
@@ -22,12 +22,5 @@ task compile(dependsOn:clean) {
 jar {
     manifest {
         attributes 'Main-Class': 'main.java.Main'
-    }
-}
-jacocoTestReport {
-    reports {
-        xml.enabled false
-        csv.enabled false
-        html.destination "./build/jacocoHtml"
     }
 }
