@@ -30,3 +30,4 @@ jacocoTestReport {
         csv.enabled false
         html.destination "./build/jacocoHtml"
     }
+}
