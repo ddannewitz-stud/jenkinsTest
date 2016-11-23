@@ -9,7 +9,7 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 // default tasks
-defaultTasks 'compile', 'test', 'jacocoTestReport', 'jar', 'showUnitTestReport', 'showCoverageReport'
+defaultTasks 'compile', 'test', 'jacocoTestReport', 'jar
 // print string before cleaning
 clean.doFirst {
     println("--- CLEANING ---")
