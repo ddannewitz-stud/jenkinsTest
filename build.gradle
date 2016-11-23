@@ -24,23 +24,9 @@ jar {
         attributes 'Main-Class': 'main.java.Main'
     }
 }
-// open test report
-task showUnitTestReport(type:Exec) {
-    // set working dir (location of test result - index.html)
-    workingDir './build/reports/tests'
-    // opens cmd which terminates after starting up index.html
-    commandLine 'cmd', '/c', 'start index.html'
-}
 jacocoTestReport {
     reports {
         xml.enabled false
         csv.enabled false
         html.destination "./build/jacocoHtml"
     }
-}
-task showCoverageReport(type:Exec) {
-    // set working dir (location of test result - index.html)
-    workingDir './build/jacocoHtml'
-    // opens cmd which terminates after starting up index.html
-    commandLine 'cmd', '/c', 'start index.html'
-}
