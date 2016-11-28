@@ -1,19 +1,17 @@
 version '1.0-SNAPSHOT'
 apply plugin: 'java'
-apply plugin: "jacoco"
 repositories {
     mavenCentral()
 }
 dependencies {
-    testCompile "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2"
-    testCompile 'junit:junit:4.11'
+    testCompile 'junit:junit:4.12'
 }
 sourceSets {
   test {
     java.srcDir './Tests'
   }
   main {
-    java.srcDir '.'
+    java.srcDir './main'
   }
 }
 // default tasks

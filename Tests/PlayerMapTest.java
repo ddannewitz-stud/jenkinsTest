@@ -1,7 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import de.omi.pfw.gruppe5.server.server.PlayerMap;
+import server.server.PlayerMap;
+import server.games.Player;
 
 public class PlayerMapTest {
 
