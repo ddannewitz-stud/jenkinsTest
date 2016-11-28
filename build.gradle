@@ -18,6 +18,13 @@ clean.doFirst {
 task compile(dependsOn:clean) {
     'compileJava'
 }
+// test
+test {
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }
+}
 // create jar
 jar {
     manifest {
