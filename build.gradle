@@ -28,7 +28,7 @@ task compile(dependsOn:clean) {
 test {
     reports {
         junitXml.enabled = true
-        html.enabled = false
+        html.enabled = true
     }
 }
 // create jar
