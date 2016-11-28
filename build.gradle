@@ -8,6 +8,14 @@ dependencies {
     testCompile "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2"
     testCompile 'junit:junit:4.11'
 }
+sourceSets {
+  test {
+    java.srcDir './Tests'
+  }
+  main {
+    java.srcDir '.'
+  }
+}
 // default tasks
 defaultTasks 'compile', 'test', 'jar'
 // print string before cleaning
@@ -21,8 +29,8 @@ task compile(dependsOn:clean) {
 // test
 test {
     reports {
-        junitXml.enabled = false
-        html.enabled = true
+        junitXml.enabled = true
+        html.enabled = false
     }
 }
 // create jar
