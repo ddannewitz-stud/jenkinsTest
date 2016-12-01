@@ -1,2 +1,3 @@
 # jenkinsTest
-https://travis-ci.org/ddannewitz-stud/jenkinsTest.svg?branch=master
+
+![alt text][https://travis-ci.org/ddannewitz-stud/jenkinsTest.svg?branch=master]
